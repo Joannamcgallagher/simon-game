@@ -3,7 +3,7 @@
  */
 
 //  const { default: test } = require("node:test");
-const { game, newGame, showScore } = require("../game");
+const { game, newGame, showScore, addTurn } = require("../game");
 
 
  beforeAll(() => {
@@ -46,8 +46,8 @@ describe("newGame works correctly", () => {
     test("playerMoves array should be empty", () => {
         expect(game.playerMoves.length).toBe(0);
     });
-    test("currentGame array should be empty", () => {
-        expect(game.currentGame.length).toBe(0);
+    test("should be 1 element in computer's game array", () => {
+        expect(game.currentGame.length).toBe(1);
     });
     test("should display 0 for the element id of score", () => {
         expect(document.getElementById("score").innerText).toBe(0);
