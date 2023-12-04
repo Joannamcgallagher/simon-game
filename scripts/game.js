@@ -23,4 +23,12 @@ function showScore() {
     document.getElementById("score").innerText = game.score;
 }
 
-module.exports = { game, newGame, showScore, addTurn };
+function lightsOn(circ) {
+    document.getElementById(circ).classList.add("light");
+    //set the timeout here to remove the light class from the button after 400ms
+    setTimeout(() => {
+        document.getElementById(circ).classList.remove("light");
+    }, 400);
+}
+
+module.exports = { game, newGame, showScore, addTurn, lightsOn };
